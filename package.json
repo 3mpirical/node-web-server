@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/3mpirical/node-web-server/issues"
   },
-  "homepage": "https://github.com/3mpirical/node-web-server#readme"
+  "homepage": "https://github.com/3mpirical/node-web-server#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "colors": "^1.3.1"
+  }
 }
