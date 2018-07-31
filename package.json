@@ -1,0 +1,19 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "A project in Andrew Mead's Node.js Udemy course; this project illustrates the basics of express.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3mpirical/node-web-server.git"
+  },
+  "author": "3mpirical",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3mpirical/node-web-server/issues"
+  },
+  "homepage": "https://github.com/3mpirical/node-web-server#readme"
+}
