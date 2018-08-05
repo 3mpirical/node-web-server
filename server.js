@@ -32,9 +32,9 @@ app.use((req, res, next) => {
 });
 
 // maintenance page //
-app.use((req, res, next) => {
-  res.render("maintenance");
-});
+// app.use((req, res, next) => {
+//   res.render("maintenance");
+// });
 
 // set static directory //
 app.use(express.static(__dirname + "/public"));
