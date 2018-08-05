@@ -4,7 +4,8 @@
   "description": "A project in Andrew Mead's Node.js Udemy course; this project illustrates the basics of express.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

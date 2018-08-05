@@ -4,6 +4,8 @@ const express = require("express"),
       hbs     = require("hbs"),
       fs      = require("fs");
 
+const port = process.env.port || 3000;
+
 
 
 // CONFIGURATION ===============
@@ -79,6 +81,6 @@ app.get("/bad", (req, res) => {
 
 
 // SERVER START ===============
-app.listen(3000, () => {
-  console.log("The server is taking requests on PORT 3000".green);
+app.listen(port, () => {
+  console.log(`The server is taking requests on ${port}`.green);
 });
