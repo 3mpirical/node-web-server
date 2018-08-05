@@ -4,7 +4,7 @@ const express = require("express"),
       hbs     = require("hbs"),
       fs      = require("fs");
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 
 
@@ -81,6 +81,6 @@ app.get("/bad", (req, res) => {
 
 
 // SERVER START ===============
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`The server is taking requests on ${port}`.green);
 });
