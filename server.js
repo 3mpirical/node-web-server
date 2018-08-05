@@ -5,16 +5,18 @@ const express = require("express"),
       fs      = require("fs");
 
 
+
 // CONFIGURATION ===============
-app.use(express.static(__dirname + "/public"));
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 
 
+
 // MIDDLEWARE ===============
+// server.log writing //
 app.use((req, res, next) => {
   const now = new Date().toString();
-  const log = `The date is now: ${now} | Method: ${req.method} | URL : ${req.url}`;
+  const log = `Request Date: ${now}  |  Method: ${req.method}  |  URL: ${req.url}`;
 
   fs.appendFile("server.log", log + "\n", (err) => {
     if (err) {
@@ -23,11 +25,21 @@ app.use((req, res, next) => {
     }
   });
 
+  console.log(log);
   next();
 });
 
+// maintenance page //
+app.use((req, res, next) => {
+  res.render("maintenance");
+});
 
-// HELPERS ===============
+// set static directory //
+app.use(express.static(__dirname + "/public"));
+
+
+
+// HELPER FUNCTIONS ===============
 hbs.registerHelper("getCurrentYear", () => {
   return new Date().getFullYear();
 });
@@ -35,8 +47,10 @@ hbs.registerHelper("getCurrentYear", () => {
 hbs.registerHelper("screamIt", (text) => {
   return text.toUpperCase();
 });
-// ROUTES ===============
 
+
+
+// ROUTES ===============
 app.get("/", (req, res) => {
   res.render("home", {
     pageTitle: "Home Page",
@@ -56,7 +70,8 @@ app.get("/about", (req, res) => {
 
 app.get("/bad", (req, res) => {
   res.json({
-    serverError: "Request Not Valid"
+    type: "Server Error",
+    statusText: "Request Not Valid"
   });
 });
 
@@ -65,5 +80,5 @@ app.get("/bad", (req, res) => {
 
 // SERVER START ===============
 app.listen(3000, () => {
-  console.log("The server has begun making requests".green);
+  console.log("The server is taking requests on PORT 3000".green);
 });
