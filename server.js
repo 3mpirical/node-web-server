@@ -82,5 +82,5 @@ app.get("/bad", (req, res) => {
 
 // SERVER START ===============
 app.listen(PORT, () => {
-  console.log(`The server is taking requests on ${port}`.green);
+  console.log(`The server is taking requests on ${PORT}`.green);
 });
